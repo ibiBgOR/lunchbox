@@ -6,7 +6,7 @@
           <a class="btn btn-primary glyphicon glyphicon-chevron-left"
               ng-click="goPrevDay()" ng-disabled="!hasPrevDay()"></a>
         </div>
-        <div class="col-xs-8 text-center">
+        <div class="col-xs-8 text-center" ng-click="goCurDay()">
           <h2><small>{{selectedDay | formatToWeekday}}</small></h2>
           <h2>{{selectedDay | date:'dd.MM.yyyy'}}</h2>
         </div>

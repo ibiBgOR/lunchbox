@@ -14,6 +14,12 @@
           .last().value();
     };
 
+    $scope.curDay = function() {
+      return _.chain($scope.days)
+          .filter(function(day) { return day == new Date(); })
+          .first().value()
+    }
+
     $scope.nextDay = function() {
       return _.chain($scope.days)
           .filter(function(day) { return day > $scope.selectedDay; })
@@ -24,6 +30,13 @@
       var prevDay = $scope.prevDay();
       if (angular.isDefined(prevDay)) {
         $scope.selectedDay = prevDay;
+      }
+    };
+
+    $scope.goCurDay = function() {
+      var curDay = $scope.curDay();
+      if (angular.isDefined(curDay)) {
+        $scope.selectedDay = curDay;
       }
     };
 
